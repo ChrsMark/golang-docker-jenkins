@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	"webapp/app/handler"
+	"app/handler"
 
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
