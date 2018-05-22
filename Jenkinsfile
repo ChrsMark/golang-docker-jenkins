@@ -21,15 +21,15 @@ pipeline {
                 		echo 'Testing..'
 				sh('echo $USER && env')
 				sh('mkdir go && mkdir go/src && mkdir go/src/project')
-				sh('cp -R ${CUR_PATH}/* go/src/project')
+				sh('cp -R ${CUR_PATH}/app go/src/app')
 				sh('ls ${WORKSPACE}')
 				sh('wget https://storage.googleapis.com/golang/go1.9.1.linux-amd64.tar.gz')
 				sh('rm -rf /tmp/jenkins_go && mkdir /tmp/jenkins_go')
 				sh('tar -xzf go1.9.1.linux-amd64.tar.gz --directory /tmp/jenkins_go')
 				sh('echo $PATH')
-				sh('cd $GOPATH/src/project && ls && go version')
-				sh('cd $GOPATH/src/project && go get ./...')
-				sh('cd app && go test')
+				sh('cd $GOPATH/src/app && ls && go version')
+				sh('cd $GOPATH/src/app && go get ./...')
+				sh('cd $GOPATH/src/app && go test')
 			}
 		}
 	    }
